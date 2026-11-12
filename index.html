@@ -14,15 +14,13 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 .card{border:1px solid #ecebe8;border-radius:16px;background:#fff;margin-top:14px;overflow:hidden}
 .small{font-size:13px;color:#888;line-height:1.5}
 .view{display:none}.view.active{display:block}
-.q{padding:14px 0;border-bottom:1px solid #eee;font-size:13px;display:flex;justify-content:space-between;cursor:pointer}
-.a{padding:0 0 14px;font-size:12.5px;color:#555;display:none}.a.open{display:block}
 .mc-wrap{overflow:hidden;padding:12px 0}
-.mc-track{display:flex;gap:10px;width:max-content;animation:mcScroll 25s linear infinite}
-.mc-track.rev{animation-direction:reverse;animation-duration:28s}
-.mc-track.slow{animation-duration:35s}
+.mc-track{display:flex;gap:10px;width:max-content;animation:mcScroll 22s linear infinite}
+.mc-track.rev{animation-direction:reverse;animation-duration:26s}
+.mc-track.slow{animation-duration:32s}
 @keyframes mcScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.chain{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
-.chain img{width:24px;height:24px;object-fit:contain}
+.chain{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;font-size:13px}
+.chain img{width:24px;height:24px;object-fit:contain;display:block}
 .marquee{overflow:hidden}.marquee-track{display:flex;gap:8px;animation:scroll 18s linear infinite;width:max-content}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .line-anim{height:2px;border-radius:2px;margin:7px 0;animation:lineMove 2s ease-in-out infinite}
@@ -45,129 +43,102 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 
 <div id="home" class="view active">
 
-<!-- MULTICHAIN FULL 24 LOGO + ROBINHOOD DLL + BERGERAK -->
 <div class="wrap"><div class="card">
 <div class="mc-wrap">
+<!-- BARIS 1 - PAKE LOGO ANTI BROKEN + FALLBACK TEXT -->
 <div class="mc-track">
 <div style="display:flex;gap:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ape-ape-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/000000"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/fantom-ftm-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/blast-blast-logo.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" onerror="this.style.display='none';this.parentNode.innerHTML='ETH'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" onerror="this.style.display='none';this.parentNode.innerHTML='BNB'"></div>
+<div class="chain" style="background:#0052FF;color:#fff"><img src="https://avatars.githubusercontent.com/u/108554348?s=200&v=4" onerror="this.style.display='none';this.parentNode.innerHTML='BASE'" style="width:20px"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/11840.png" onerror="this.style.display='none';this.parentNode.innerHTML='OP'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png" onerror="this.style.display='none';this.parentNode.innerHTML='ARB'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png" onerror="this.style.display='none';this.parentNode.innerHTML='SOL'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png" onerror="this.style.display='none';this.parentNode.innerHTML='AVAX'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png" onerror="this.style.display='none';this.parentNode.innerHTML='APE'"></div>
+<div class="chain" style="background:#000;color:#fff">R</div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png" onerror="this.style.display='none';this.parentNode.innerHTML='MATIC'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" onerror="this.style.display='none';this.parentNode.innerHTML='ETH'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" onerror="this.style.display='none';this.parentNode.innerHTML='BNB'"></div>
 </div>
 <div style="display:flex;gap:10px;margin-left:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ape-ape-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/000000"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/fantom-ftm-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/blast-blast-logo.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" onerror="this.style.display='none';this.parentNode.innerHTML='ETH'"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" onerror="this.style.display='none';this.parentNode.innerHTML='BNB'"></div>
+<div class="chain" style="background:#0052FF;color:#fff">BASE</div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/11840.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/11841.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/5805.png"></div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png"></div>
+<div class="chain" style="background:#000;color:#fff">R</div>
+<div class="chain"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/3890.png"></div>
+<div class="chain">ETH</div>
+<div class="chain">BNB</div>
 </div>
 </div>
+
 <div class="mc-track rev" style="margin-top:10px">
 <div style="display:flex;gap:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/zksync-zksync-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/linea-linea-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/scroll-scroll-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/zora-zora-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/mode-mode-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/opensea/2081E2"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/00C805"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
+<div class="chain" style="background:#111;color:#fff">ZKS</div>
+<div class="chain" style="background:#000;color:#fff">LINEA</div>
+<div class="chain" style="background:#FFEEDA">SCROLL</div>
+<div class="chain" style="background:#000;color:#fff">ZORA</div>
+<div class="chain" style="background:#0052FF;color:#fff">BASE</div>
+<div class="chain">ETH</div>
+<div class="chain">BNB</div>
+<div class="chain">OP</div>
+<div class="chain" style="background:#2081E2;color:#fff">OS</div>
+<div class="chain" style="background:#000;color:#fff">R</div>
+<div class="chain">MATIC</div>
+<div class="chain">SOL</div>
 </div>
 <div style="display:flex;gap:10px;margin-left:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/zksync-zksync-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/linea-linea-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/scroll-scroll-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/zora-zora-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/mode-mode-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/opensea/2081E2"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/00C805"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
+<div class="chain" style="background:#111;color:#fff">ZKS</div>
+<div class="chain" style="background:#000;color:#fff">LINEA</div>
+<div class="chain" style="background:#FFEEDA">SCROLL</div>
+<div class="chain" style="background:#000;color:#fff">ZORA</div>
+<div class="chain" style="background:#0052FF;color:#fff">BASE</div>
+<div class="chain">ETH</div>
+<div class="chain">BNB</div>
+<div class="chain">OP</div>
+<div class="chain" style="background:#2081E2;color:#fff">OS</div>
+<div class="chain" style="background:#000;color:#fff">R</div>
+<div class="chain">MATIC</div>
+<div class="chain">SOL</div>
 </div>
 </div>
+
 <div class="mc-track slow" style="margin-top:10px">
 <div style="display:flex;gap:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ape-ape-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/000000"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/zora-zora-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
+<div class="chain">ETH</div><div class="chain">ARB</div><div class="chain">OP</div><div class="chain">AVAX</div><div class="chain" style="background:#0052FF;color:#fff">BASE</div><div class="chain">BNB</div><div class="chain">APE</div><div class="chain" style="background:#000;color:#fff">R</div><div class="chain">MATIC</div><div class="chain">ZORA</div><div class="chain">SOL</div><div class="chain">ETH</div>
 </div>
 <div style="display:flex;gap:10px;margin-left:10px">
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/arbitrum-arb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/avalanche-avax-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/base-base-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/bnb-bnb-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ape-ape-logo.png"></div>
-<div class="chain"><img src="https://cdn.simpleicons.org/robinhood/000000"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/polygon-matic-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/zora-zora-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/solana-sol-logo.png"></div>
-<div class="chain"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"></div>
+<div class="chain">ETH</div><div class="chain">ARB</div><div class="chain">OP</div><div class="chain">AVAX</div><div class="chain" style="background:#0052FF;color:#fff">BASE</div><div class="chain">BNB</div><div class="chain">APE</div><div class="chain" style="background:#000;color:#fff">R</div><div class="chain">MATIC</div><div class="chain">ZORA</div><div class="chain">SOL</div><div class="chain">ETH</div>
 </div>
 </div>
 </div>
 <div style="padding:6px 18px 18px"><div style="font-weight:700">Multi-chain</div><div class="small">Built to support all your favourite blockchains</div></div>
 </div></div>
 
-<!-- NOTHING TO INSTALL -->
 <div class="wrap"><div class="card"><div style="padding:14px;display:flex;gap:10px;justify-content:center"><span>🌐</span><span>🦊</span><span>🛡</span></div><div style="border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px"><div style="display:flex;gap:6px"><span style="width:10px;height:10px;background:#ff5f57;border-radius:50%"></span><span style="width:10px;height:10px;background:#ffbd2e;border-radius:50%"></span><span style="width:10px;height:10px;background:#28c940;border-radius:50%"></span></div><div style="margin-top:8px;font-size:12px">https://monos.bot</div></div><div style="padding:18px"><div style="font-weight:700">Nothing to install</div><div class="small">Everything works in the browser, no installation required</div></div></div></div>
 
-<!-- LAUNCHPAD SUPPORT - BALIKIN -->
-<div class="wrap"><div class="card"><div style="padding:14px;display:flex;gap:12px;font-size:20px">◼ 🟨 🔵 🏚 ◥</div><div style="border:1px solid #eee;border-radius:8px;margin:0 14px;padding:8px 10px;font-size:11px;color:#888">🔍 https://opensea.io/collection/tantocollective</div><div style="padding:18px"><div style="font-weight:700">Launchpad Support</div><div class="small">Supports all major launchpads out of the box</div></div></div></div>
+<div class="wrap"><div class="card"><div style="padding:14px;display:flex;gap:12px">◼ 🟨 🔵 🏚 ◥</div><div style="border:1px solid #eee;border-radius:8px;margin:0 14px;padding:8px 10px;font-size:11px;color:#888">🔍 https://opensea.io/collection/tantocollective</div><div style="padding:18px"><div style="font-weight:700">Launchpad Support</div><div class="small">Supports all major launchpads out of the box</div></div></div></div>
 
-<!-- PROVEN TECH -->
-<div class="wrap"><div class="card"><div style="padding:10px 0"><div class="marquee"><div class="marquee-track"><div style="display:flex;gap:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div><div style="display:flex;gap:6px;margin-left:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div></div></div><div class="marquee" style="margin-top:6px"><div class="marquee-track" style="animation-direction:reverse"><div style="display:flex;gap:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#bbb;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div><div style="display:flex;gap:6px;margin-left:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#bbb;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div></div></div></div><div style="padding:18px"><div style="font-weight:700">Proven Tech</div><div class="small">More than 80,000 tokens minted so far</div></div></div></div>
+<div class="wrap"><div class="card"><div style="padding:10px 0"><div class="marquee"><div class="marquee-track"><div style="display:flex;gap:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div><div style="display:flex;gap:6px;margin-left:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0;margin-right:6px"></div>`)</script></div></div></div></div><div style="padding:18px"><div style="font-weight:700">Proven Tech</div><div class="small">More than 80,000 tokens minted so far</div></div></div></div>
 
-<!-- SAFE BY DESIGN - BALIKIN -->
 <div class="wrap"><div class="card" style="text-align:center"><div style="padding:18px"><div style="border:1px dashed #ccc;border-radius:12px;padding:16px;display:inline-block"><div style="display:flex;gap:8px"><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span></div></div></div><div style="padding:0 18px 18px;text-align:left"><div style="font-weight:700">Safe by Design</div><div class="small">Keys are stored with 2 layers of encryption for maximum security</div></div></div></div>
 
-<!-- SUPER FAST - BALIKIN -->
 <div class="wrap"><div class="card"><div style="padding:12px"><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d)"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.2s"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.4s"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.6s"></div></div><div style="padding:18px"><div style="font-weight:700">Super Fast</div><div class="small">Fast minting speed anywhere in the world, no custom RPC required</div></div></div></div>
 
-<!-- FULL OF TOOLS - BALIKIN -->
 <div class="wrap"><div class="card"><div style="padding:14px"><div style="text-align:center;color:#0a7a42;font-weight:700;font-size:12px">✓ 12 wallets generated!</div><div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px"><div style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px">0x42A...CF8F18</div><div style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px">0x404e...AEAaa</div><div style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px">0xb038...A464d8</div><div style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px">0x83C3...F1AC7</div></div></div><div style="padding:18px"><div style="font-weight:700">Full of tools</div><div class="small">Generate wallets, transfer funds & NFTs all in one place</div></div></div></div>
 
-<!-- DARK MODE - BALIKIN -->
 <div class="wrap"><div class="card"><div style="padding:18px;display:flex;justify-content:center"><div style="background:#111;color:#fff;border-radius:12px;padding:12px;width:140px;transform:rotate(-3deg)"><div style="font-size:11px">↗ Mints 3<br>🗂 Wallets 34<br>⇄ Transfer<br>◍ Portfolio</div></div></div><div style="padding:18px"><div style="font-weight:700">Dark mode</div><div class="small">Want to mint at night? We got you covered</div></div></div></div>
 
 </div>
 
 <div id="pricing" class="view"><div class="wrap"><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">On-demand</div><div class="small">$2/mint</div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;cursor:pointer" onclick="openWallet()">Get started</div></div><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">Pro</div><div class="small">$200/month</div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;cursor:pointer" onclick="openWallet()">Get started</div></div></div></div>
 
-<div id="faq" class="view"><div class="wrap" style="padding-top:10px"><div style="text-align:center"><div style="font-size:22px;font-weight:700">FAQ</div></div><div style="margin-top:16px"><div class="q" onclick="toggleFaq(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is mint terminal for Base - generate wallets, bulk check, mint fast. No install.</div><div class="q" onclick="toggleFaq(this)"><span>Is it safe?</span><span>+</span></div><div class="a">Yes - 2 layer encryption, local keys, non-custodial.</div></div></div></div>
+<div id="faq" class="view"><div class="wrap" style="padding-top:10px"><div style="text-align:center"><div style="font-size:22px;font-weight:700">FAQ</div></div><div style="margin-top:16px"><div class="q" onclick="toggleFaq(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is mint terminal for Base - generate wallets, bulk check, mint fast. No install.</div></div></div></div>
 
 <div class="wrap" style="padding:24px 14px;text-align:center"><div style="font-size:11px;color:#aaa">© 2026 MONOS</div></div>
 
