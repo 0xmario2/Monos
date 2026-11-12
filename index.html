@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MONOS — Base Terminal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+<style>body{font-family:Inter;background:#050507;color:#fff}.mono{font-family:JetBrains Mono}html{scroll-behavior:smooth}</style>
+</head>
+<body class="bg-[#050507] antialiased">
+
+<nav class="sticky top-0 z-50 flex justify-between items-center px-6 md:px-10 py-5 bg-[#050507]/90 backdrop-blur border-b border-white/[0.07]">
+<div class="font-black text-[20px] tracking-[-0.05em]">MONOS</div>
+<div class="flex gap-6 mono text-[11px] tracking-widest text-white/30">
+<a href="#about" class="hover:text-white">ABOUT</a>
+<a href="#terminal" class="hover:text-white">TERMINAL</a>
+<a href="#features" class="hover:text-white">FEATURES</a>
+<a href="#pro" class="hover:text-white">PRO</a>
+</div>
+<a href="#pro" class="mono text-[11px] bg-white text-black px-5 py-2 font-bold">BASE / 8453</a>
+</nav>
+
+<!-- HERO -->
+<section class="px-6 md:px-10 pt-16 pb-12 max-w-[1400px] mx-auto">
+<div class="mono text-[11px] text-white/25 mb-8">MONOS TERMINAL — ONE SCREEN TO TRADE BASE</div>
+<h1 class="text-[18vw] md:text-[11vw] font-black leading-[0.82] tracking-[-0.07em]">TRADE<br>BASE<span class="text-white/20">.</span></h1>
+<p class="mt-8 mono text-[13px] text-white/40 max-w-[420px] leading-7">One terminal. All Base tokens. No tabs. No bullshit. Built for speed.</p>
+<div class="mt-8 flex gap-3 mono text-[11px]">
+<a href="#terminal" class="bg-white text-black px-7 py-3 font-bold">OPEN TERMINAL →</a>
+<a href="#features" class="border border-white/20 px-7 py-3 hover:bg-white/5">FEATURES</a>
+</div>
+</section>
+
+<!-- TERMINAL MOCK -->
+<section id="terminal" class="px-6 md:px-10 pb-20 max-w-[1400px] mx-auto">
+<div class="border border-white/[0.08] bg-[#0A0A0C] rounded-[12px] overflow-hidden">
+<div class="flex justify-between items-center px-6 py-4 border-b border-white/[0.07] mono text-[11px]">
+<span class="text-white/30">MONOS / TERMINAL — BASE 8453</span>
+<div class="flex gap-4 text-white/20"><span class="text-emerald-400">● LIVE</span><a href="#features" class="hover:text-white">FEATURES →</a></div>
+</div>
+<div class="grid md:grid-cols-[260px_1fr_300px] divide-y md:divide-y-0 md:divide-x divide-white/[0.07] min-h-[480px]">
+<!-- LEFT -->
+<div class="p-5 mono text-[11px] space-y-4">
+<div class="text-white/20 mb-3">WATCHLIST</div>
+<div class="flex justify-between bg-white text-black px-3 py-2 font-bold"><span>MONOS / WETH</span><span>+12.4%</span></div>
+<div class="flex justify-between text-white/40"><span>DEGEN / WETH</span><span class="text-emerald-400">+4.2%</span></div>
+<div class="flex justify-between text-white/40"><span>BASED / WETH</span><span class="text-red-400">-1.1%</span></div>
+<div class="flex justify-between text-white/40"><span>TYBG / WETH</span><span class="text-emerald-400">+21%</span></div>
+<div class="pt-6"><a href="#features" class="text-white/20 hover:text-white">→ ALL TOKENS</a></div>
+</div>
+<!-- CENTER CHART -->
+<div class="p-6">
+<div class="flex justify-between mono text-[11px] text-white/30 mb-6"><span>MONOS/WETH — 1M — BASE</span><span class="text-white">0.00423 ETH</span></div>
+<div class="h-[280px] bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] border border-white/[0.06] relative">
+<div class="absolute bottom-10 left-0 right-0 h-[2px] bg-white/80" style="clip-path: polygon(0 50%, 15% 30%, 30% 60%, 50% 20%, 70% 40%, 85% 10%, 100% 30%)"></div>
+<div class="absolute bottom-4 left-6 mono text-[10px] text-white/20">VOL: $1.2M — <a href="#pro" class="text-white underline">GO PRO →</a></div>
+</div>
+</div>
+<!-- RIGHT TRADE -->
+<div class="p-5 mono text-[11px]">
+<div class="flex gap-2 mb-5"><div class="flex-1 bg-white text-black text-center py-2 font-bold">BUY</div><div class="flex-1 border border-white/15 text-center py-2 text-white/40">SELL</div></div>
+<div class="space-y-3">
+<div class="border border-white/10 p-3 flex justify-between"><span class="text-white/30">AMOUNT</span><span>0.5 ETH</span></div>
+<div class="bg-white text-black text-center py-3 font-bold"><a href="#pro" class="block">BUY MONOS →</a></div>
+<div class="pt-4 space-y-2 text-white/30"><div class="flex justify-between"><span>BALANCE</span><span class="text-white">2.43 ETH</span></div><div class="flex justify-between"><span>PnL</span><span class="text-emerald-400">+0.82 ETH</span></div></div>
+<a href="#about" class="block mt-6 text-white/20 hover:text-white">→ HOW IT WORKS</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="px-6 md:px-10 py-16 max-w-[1400px] mx-auto border-t border-white/[0.07] grid md:grid-cols-2 gap-12">
+<div><div class="mono text-[11px] text-white/20 mb-6">01 / ABOUT</div><h2 class="text-4xl font-black tracking-tighter leading-[0.9]">ONE SCREEN.<br>NO TABS.</h2></div>
+<div class="mono text-[13px] leading-7 text-white/50 max-w-[440px]">MONOS Terminal is Photon for Base. We killed the 10 tabs you open to trade. Chart, buy, sell, track — all in one screen. <br><br><a href="#features" class="text-white border-b border-white/30">→ Features</a> <a href="#terminal" class="text-white border-b border-white/30 ml-4">→ Open Terminal</a></div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="px-6 md:px-10 py-16 max-w-[1400px] mx-auto border-t border-white/[0.07]">
+<div class="mono text-[11px] text-white/20 tracking-widest mb-10">02 / FEATURES</div>
+<div class="grid md:grid-cols-3 gap-[1px] bg-white/[0.08] border border-white/[0.08]">
+<a href="#terminal" class="bg-[#0A0A0C] p-8 block hover:bg-[#111113]"><div class="mono text-[10px] text-white/20 mb-4">01</div><div class="font-bold mb-2">Instant Trade</div><div class="mono text-[12px] text-white/40 leading-6">Buy/sell any Base token in one click. No approval hell.</div></a>
+<a href="#pro" class="bg-[#0A0A0C] p-8 block hover:bg-[#111113]"><div class="mono text-[10px] text-white/20 mb-4">02</div><div class="font-bold mb-2">Live PnL</div><div class="mono text-[12px] text-white/40 leading-6">Track your wallet in real time. Green or red, instantly.</div></a>
+<a href="#about" class="bg-[#0A0A0C] p-8 block hover:bg-[#111113]"><div class="mono text-[10px] text-white/20 mb-4">03</div><div class="font-bold mb-2">Built on Base</div><div class="mono text-[12px] text-white/40 leading-6">Only Base. Chain 8453. No multi-chain noise. MONO focus.</div></a>
+</div>
+</section>
+
+<!-- PRO -->
+<section id="pro" class="px-6 md:px-10 py-20 max-w-[1400px] mx-auto border-t border-white/[0.07] text-center">
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter">MONOS PRO</h2>
+<p class="mono text-[13px] text-white/40 mt-4">Faster RPC. Private buys. No ads. For builders who trade.</p>
+<div class="mt-8 flex justify-center gap-3 mono text-[11px]">
+<a href="#terminal" class="bg-white text-black px-8 py-3 font-bold">OPEN TERMINAL</a>
+<a href="#about" class="border border-white/20 px-8 py-3">ABOUT</a>
+</div>
+</section>
+
+<footer class="px-6 md:px-10 py-8 border-t border-white/[0.07] mono text-[10px] text-white/20 flex justify-between max-w-[1400px] mx-auto">
+<span>© 2026 MONOS — BASE 8453</span>
+<div class="flex gap-5"><a href="#about" class="hover:text-white">ABOUT</a><a href="#terminal" class="hover:text-white">TERMINAL</a><a href="#features" class="hover:text-white">FEATURES</a><a href="#pro" class="hover:text-white">PRO</a></div>
+</footer>
+
+</body>
+</html>
