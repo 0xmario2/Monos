@@ -5,104 +5,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MONOS</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box }
-body { background:#fff; color:#000; font-family: -apple-system, BlinkMacSystemFont, "Inter", Arial, sans-serif; -webkit-font-smoothing: antialiased }
-.wrap { max-width:1120px; margin:0 auto; padding:0 24px }
-a { color:#000; text-decoration:none }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fff;color:#000;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
 </style>
 </head>
 <body>
 
-<!-- NAV RAPIH -->
-<div style="border-bottom:5px solid #000; background:#fff; position:sticky; top:0; z-index:10">
-<div class="wrap" style="height:72px; display:flex; justify-content:space-between; align-items:center">
-<div style="display:flex; align-items:center; gap:14px">
-<div style="width:40px; height:40px; border:4px solid #000; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:20px">M</div>
-<div style="font-weight:900; font-size:20px; letter-spacing:-1px">MONOS</div>
+<div style="border-bottom:3px solid #000;background:#fff;position:sticky;top:0">
+<div class="wrap" style="height:56px;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border:3px solid #000;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px">M</div><div style="font-weight:900;font-size:16px;letter-spacing:-0.5px">MONOS</div></div>
+<div style="display:flex;gap:6px"><a href="#about" style="border:2px solid #000;border-radius:100px;padding:6px 12px;font-size:9px;font-weight:900;color:#000;text-decoration:none">ABOUT</a><a href="#terminal" style="background:#000;color:#fff;border-radius:100px;padding:6px 12px;font-size:9px;font-weight:900;text-decoration:none">TERMINAL</a></div>
 </div>
-<div style="display:flex; gap:8px">
-<a href="#about" style="border:3px solid #000; border-radius:100px; padding:8px 16px; font-size:11px; font-weight:800; letter-spacing:0.5px">ABOUT</a>
-<a href="#terminal" style="background:#000; color:#fff; border-radius:100px; padding:8px 16px; font-size:11px; font-weight:800">TERMINAL</a>
+</div>
+
+<div class="wrap" style="padding:40px 20px 30px">
+<div style="display:inline-block;border:2px solid #000;border-radius:100px;padding:5px 10px;font-size:8px;font-weight:900;letter-spacing:1px">MONOS</div>
+<h1 style="font-size:68px;font-weight:900;line-height:0.9;letter-spacing:-4px;margin-top:20px">MONOS<span style="color:#ddd">.</span></h1>
+<div style="margin-top:20px;border-top:3px solid #000;padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="font-size:18px;font-weight:800;line-height:1.15;letter-spacing:-0.5px">One screen to trade Base.<br>Built like your logo — thick, clean, mono.</div>
+<div><div style="font-size:12px;line-height:1.5;color:#666">A terminal for Base by MONOS . No tabs. No noise. Just M.</div><div style="margin-top:14px;display:flex;gap:8px"><a href="#terminal" style="background:#000;color:#fff;padding:10px 16px;border-radius:100px;font-size:10px;font-weight:900;text-decoration:none">OPEN TERMINAL →</a><a href="#about" style="border:2px solid #000;padding:8px 14px;border-radius:100px;font-size:10px;font-weight:900;color:#000;text-decoration:none">ABOUT</a></div></div>
+</div>
+</div>
+
+<div class="wrap" style="padding:0 20px"><div style="height:3px;background:#000"></div></div>
+
+<div id="about" class="wrap" style="padding:30px 20px;display:grid;grid-template-columns:80px 1fr 140px;gap:16px">
+<div style="font-size:8px;font-weight:900;letter-spacing:1px">01 / ABOUT</div>
+<div style="font-size:28px;font-weight:900;line-height:0.9;letter-spacing:-1.5px">WE BUILD<br>ONE THING<br>RIGHT.</div>
+<div style="font-size:11px;line-height:1.5;color:#555">MONOS is not a token. It's a tool. Inspired by your M mark — rounded square, thick stroke, mono.</div>
+</div>
+
+<div class="wrap" style="padding:0 20px"><div style="height:3px;background:#000"></div></div>
+
+<div id="terminal" class="wrap" style="padding:30px 20px">
+<div style="display:flex;justify-content:space-between;margin-bottom:16px"><div style="font-size:8px;font-weight:900;letter-spacing:1px">02 / TERMINAL</div><div style="font-size:8px;font-weight:900;background:#000;color:#fff;padding:4px 8px;border-radius:100px">LIVE</div></div>
+<div style="border:3px solid #000;border-radius:20px;overflow:hidden">
+<div style="height:44px;border-bottom:3px solid #000;display:flex;align-items:center;justify-content:space-between;padding:0 16px"><span style="font-size:10px;font-weight:800">MONOS — TERMINAL</span><span style="font-size:9px;color:#999">BASE 8453</span></div>
+<div style="display:grid;grid-template-columns:1fr 1.5fr 1fr;min-height:260px">
+<div style="border-right:3px solid #000;padding:14px"><div style="font-size:7px;font-weight:900;color:#999;margin-bottom:10px;letter-spacing:1px">WATCHLIST</div><div style="background:#000;color:#fff;border-radius:10px;padding:8px 10px;display:flex;justify-content:space-between;font-size:11px;font-weight:800"><span>MONOS</span><span>+12%</span></div><div style="margin-top:8px;font-size:11px;font-weight:700;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;padding:6px 10px;border:2px solid #eee;border-radius:10px"><span>DEGEN</span><span style="color:green">+4%</span></div><div style="display:flex;justify-content:space-between;padding:6px 10px;border:2px solid #eee;border-radius:10px"><span>BASED</span><span style="color:red">-1%</span></div></div></div>
+<div style="padding:14px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;font-size:8px;font-weight:800"><span>CHART / MONOS</span><span>0.0042 ETH</span></div><div style="margin-top:12px;flex:1;border:2px dashed #000;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px">CHART</div></div>
+<div style="border-left:3px solid #000;padding:14px;background:#fafafa"><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div style="background:#000;color:#fff;border-radius:100px;padding:8px;text-align:center;font-size:9px;font-weight:900">BUY</div><div style="border:2px solid #000;border-radius:100px;padding:6px;text-align:center;font-size:9px;font-weight:900">SELL</div></div><div style="margin-top:10px;border:2px solid #000;border-radius:10px;padding:8px;display:flex;justify-content:space-between;font-size:10px;font-weight:800"><span>0.5 ETH</span><span>→</span></div><div style="margin-top:8px;background:#000;color:#fff;border-radius:10px;padding:10px;text-align:center;font-size:10px;font-weight:900">BUY MONOS</div></div>
 </div>
 </div>
 </div>
 
-<!-- HERO RAPIH TENGAH -->
-<div class="wrap" style="padding:100px 24px 80px; text-align:left">
-<div style="display:inline-block; border:3px solid #000; border-radius:100px; padding:7px 14px; font-size:10px; font-weight:900; letter-spacing:1.5px">MONOSTECH.XYZ — BASE 8453 — JAKARTA</div>
-<h1 style="font-size: clamp(80px, 18vw, 200px); font-weight:900; line-height:0.85; letter-spacing:-0.07em; margin-top:40px">MONOS<span style="color:#e5e5e5">.</span></h1>
-<div style="margin-top:40px; display:grid; grid-template-columns: 1.2fr 0.8fr; gap:40px; align-items:end; border-top:5px solid #000; padding-top:32px">
-<div style="font-size:28px; font-weight:800; line-height:1.1; letter-spacing:-1px">One screen to trade Base.<br>Built like your logo — thick, clean, mono.</div>
-<div>
-<div style="font-size:14px; line-height:1.6; color:#555">A terminal for Base by MONOSTECH. No tabs. No noise. Just M.</div>
-<div style="margin-top:20px; display:flex; gap:10px">
-<a href="#terminal" style="background:#000; color:#fff; padding:14px 22px; border-radius:100px; font-size:11px; font-weight:900; display:inline-block">OPEN TERMINAL →</a>
-<a href="#about" style="border:3px solid #000; padding:11px 20px; border-radius:100px; font-size:11px; font-weight:900; display:inline-block">ABOUT</a>
-</div>
-</div>
-</div>
-</div>
+<div class="wrap" style="padding:0 20px"><div style="height:3px;background:#000"></div></div>
 
-<!-- SECTION 01 RAPIH -->
-<div id="about" class="wrap" style="padding:70px 24px; display:grid; grid-template-columns: 200px 1fr; gap:20px; border-top:5px solid #000">
-<div style="font-size:11px; font-weight:900; letter-spacing:2px">01 / ABOUT</div>
-<div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px">
-<div style="font-size:48px; font-weight:900; line-height:0.9; letter-spacing:-2px">WE BUILD ONE THING RIGHT.</div>
-<div style="font-size:14px; line-height:1.7; color:#444">MONOS is not a token. It's a tool. Inspired by your M mark — rounded square, thick stroke, mono weight. We apply same logic to product: one terminal, one chain, one focus.</div>
-</div>
-</div>
-
-<!-- SECTION 02 - TERMINAL CARD RAPIH & MENARIK -->
-<div id="terminal" class="wrap" style="padding:70px 24px; border-top:5px solid #000">
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px">
-<div style="font-size:11px; font-weight:900; letter-spacing:2px">02 / TERMINAL</div>
-<div style="font-size:11px; font-weight:900; background:#000; color:#fff; padding:6px 12px; border-radius:100px">LIVE ON BASE 8453</div>
-</div>
-
-<!-- CARD UTAMA KEK LOGO -->
-<div style="border:5px solid #000; border-radius:36px; overflow:hidden; background:#fff">
-<!-- Header card -->
-<div style="height:64px; border-bottom:5px solid #000; display:flex; align-items:center; justify-content:space-between; padding:0 28px">
-<div style="display:flex; align-items:center; gap:12px"><div style="width:12px; height:12px; background:#000; border-radius:100%"></div><div style="width:12px; height:12px; border:3px solid #000; border-radius:100%"></div><div style="width:12px; height:12px; border:3px solid #000; border-radius:100%"></div><span style="margin-left:16px; font-size:12px; font-weight:800">MONOS — TERMINAL</span></div>
-<div style="font-size:11px; font-weight:700; color:#999">monos-ten.vercel.app</div>
-</div>
-<!-- Body card 3 kolom rapi -->
-<div style="display:grid; grid-template-columns: 260px 1fr 280px; min-height:420px">
-<div style="border-right:5px solid #000; padding:24px">
-<div style="font-size:10px; font-weight:900; letter-spacing:1.5px; color:#999; margin-bottom:16px">WATCHLIST</div>
-<div style="background:#000; color:#fff; border-radius:16px; padding:12px 14px; display:flex; justify-content:space-between; font-size:13px; font-weight:800"><span>MONOS/WETH</span><span>+12%</span></div>
-<div style="margin-top:10px; display:flex; flex-direction:column; gap:8px; font-size:13px; font-weight:700">
-<div style="display:flex; justify-content:space-between; padding:10px 14px; border:3px solid #eee; border-radius:14px"><span>DEGEN</span><span style="color:#0a0">+4.2%</span></div>
-<div style="display:flex; justify-content:space-between; padding:10px 14px; border:3px solid #eee; border-radius:14px"><span>BASED</span><span style="color:#c00">-1.1%</span></div>
-</div>
-</div>
-<div style="padding:24px; display:flex; flex-direction:column">
-<div style="display:flex; justify-content:space-between; font-size:11px; font-weight:800"><span>CHART / MONOS</span><span>0.0042 ETH</span></div>
-<div style="margin-top:20px; flex:1; border:3px dashed #000; border-radius:20px; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px; letter-spacing:-1px">CHART PREVIEW</div>
-<div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:10px">
-<div style="border:3px solid #000; border-radius:100px; padding:10px; text-align:center; font-size:11px; font-weight:900">VOL $1.2M</div>
-<div style="background:#000; color:#fff; border-radius:100px; padding:10px; text-align:center; font-size:11px; font-weight:900">BUYERS 342</div>
-</div>
-</div>
-<div style="border-left:5px solid #000; padding:24px; background:#fafafa">
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:8px"><div style="background:#000; color:#fff; border-radius:100px; padding:12px; text-align:center; font-size:11px; font-weight:900">BUY</div><div style="border:3px solid #000; border-radius:100px; padding:9px; text-align:center; font-size:11px; font-weight:900">SELL</div></div>
-<div style="margin-top:16px; border:3px solid #000; border-radius:16px; padding:14px; display:flex; justify-content:space-between; font-size:12px; font-weight:800"><span>AMOUNT</span><span>0.5 ETH</span></div>
-<div style="margin-top:12px; background:#000; color:#fff; border-radius:16px; padding:16px; text-align:center; font-size:12px; font-weight:900">BUY MONOS →</div>
-<div style="margin-top:16px; font-size:11px; line-height:1.6; color:#777">One click. No approval. Private RPC.</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- FOOTER RAPIH -->
-<div id="contact" class="wrap" style="padding:100px 24px 40px; border-top:5px solid #000; text-align:center">
-<div style="width:96px; height:96px; border:5px solid #000; border-radius:24px; margin:0 auto; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:48px">M</div>
-<div style="font-size: clamp(60px, 14vw, 160px); font-weight:900; letter-spacing:-0.07em; line-height:0.8; margin-top:24px">MONOS</div>
-<div style="margin-top:24px; display:flex; gap:10px; justify-content:center">
-<a href="mailto:hello@monostech.xyz" style="background:#000; color:#fff; padding:14px 26px; border-radius:100px; font-size:12px; font-weight:900">HELLO@MONOSTECH.XYZ</a>
-<a href="#about" style="border:3px solid #000; padding:11px 22px; border-radius:100px; font-size:12px; font-weight:900">BACK TO TOP</a>
-</div>
-<div style="margin-top:60px; border-top:5px solid #000; padding-top:20px; display:flex; justify-content:space-between; font-size:10px; font-weight:900; letter-spacing:1px"><span>© 2026 MONOS — MONOSTECH.XYZ</span><span>WHITE / BLACK / MONO</span></div>
+<div id="contact" class="wrap" style="padding:40px 20px;text-align:center">
+<div style="width:64px;height:64px;border:4px solid #000;border-radius:16px;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:32px">M</div>
+<div style="font-size:56px;font-weight:900;letter-spacing:-4px;line-height:0.8;margin-top:16px">MONOS</div>
+<div style="margin-top:16px"><a href="mailto:hello@monostech.xyz" style="background:#000;color:#fff;padding:10px 20px;border-radius:100px;font-size:10px;font-weight:900;text-decoration:none">HELLO@MONOSTECH.XYZ</a></div>
+<div style="margin-top:40px;border-top:3px solid #000;padding-top:12px;display:flex;justify-content:space-between;font-size:8px;font-weight:900;letter-spacing:1px"><span>© 2026 MONOS</span><span>MONOSTECH.XYZ</span></div>
 </div>
 
 </body>
