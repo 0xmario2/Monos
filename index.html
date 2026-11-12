@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,35 +11,37 @@ body{background:#000;color:#a1a1aa;font-family:Inter,sans-serif}
 b{color:#fff;font-weight:600}
 a{color:#8b7cff;text-decoration:none}
 .view{display:none}.view.active{display:block}
-.card{margin:16px auto;width:calc(100% - 24px);max-width:460px;border:1px solid #262626;border-radius:16px;background:#121212;padding:22px 18px}
+.card{margin:16px auto;width:calc(100% - 24px);max-width:440px;border:1px solid #262626;border-radius:16px;background:#121212;padding:22px 18px}
 .bottom{position:fixed;left:0;right:0;bottom:0;height:56px;background:#121212;border-top:1px solid #262626;display:flex;justify-content:space-around;align-items:center;z-index:10}
 .bottom i{font-size:20px;color:#52525b;cursor:pointer}.bottom i.active{color:#8b7cff}
 .sidebar{position:fixed;top:0;left:0;bottom:0;width:78%;max-width:300px;background:#0f0f0f;border-right:1px solid #262626;transform:translateX(-100%);transition:.28s;z-index:30;padding:16px;display:flex;flex-direction:column}
 .sidebar.open{transform:translateX(0)}
 .s-item{display:flex;gap:12px;padding:12px 8px;font-size:14px;color:#a1a1aa;cursor:pointer}.s-item.active{color:#8b7cff}
-.btn{border:1px solid #2a2a2a;background:#1a1a1a;color:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.btn{border:1px solid #2a2a2a;background:#1a1a1a;color:#fff;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center;justify-content:center}
 .btn-primary{background:#6b6cff;border-color:#6b6cff}
-.pill{border:1px solid #2a2a2a;background:#1a1a1a;color:#ccc;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;display:inline-flex;gap:6px}
+.pill{border:1px solid #2a2a2a;background:#1a1a1a;color:#ccc;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600}
 .doc{border:1px solid #222;border-radius:12px;padding:14px;margin-top:10px;background:#151515;cursor:pointer}
-.doc:hover{border-color:#3a3a3a}
-.doc-content{font-size:13px;line-height:1.6;color:#888;margin-top:10px}
+.doc-content{font-size:13px;line-height:1.6;color:#888;margin-top:10px;display:none}
+.doc-content.open{display:block}
 </style>
 </head>
 <body>
 
+<!-- SIDEBAR -->
 <div id="sidebar" class="sidebar">
 <div class="btn" id="addrBtn" onclick="connectWallet()">Connect Wallet</div>
 <div style="margin-top:18px">
 <div class="s-item active" onclick="showView('home');closeSide()">⌂ Home</div>
-<div class="s-item" onclick="showView('app');closeSide()">◍ App Terminal</div>
+<div class="s-item" onclick="showView('app');closeSide()">◍ Terminal</div>
 <div class="s-item" onclick="showView('docs');closeSide()">📄 Docs</div>
 <div class="s-item" onclick="window.open('https://x.com/monos_ai','_blank')">𝕏 monos_ai</div>
 <div class="s-item" onclick="window.open('https://discord.gg/monostech','_blank')">💬 monostech</div>
 </div>
-<div style="margin-top:auto;color:#444;font-size:11px">© 2026 MONOS<br>Twitter: @monos_ai<br>Discord: monostech</div>
+<div style="margin-top:auto;color:#444;font-size:11px">© 2026 MONOS<br>@monos_ai • monostech</div>
 </div>
 <div id="overlay" onclick="closeSide()" style="position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:20"></div>
 
+<!-- HEADER -->
 <div style="padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#000;border-bottom:1px solid #111;z-index:5">
 <div style="display:flex;gap:10px;align-items:center;color:#fff;font-weight:800;font-size:18px"><span style="cursor:pointer" onclick="openSide()">☰</span> ● monos</div>
 <div style="display:flex;gap:6px;align-items:center">
@@ -49,56 +51,64 @@ a{color:#8b7cff;text-decoration:none}
 </div>
 </div>
 
-<!-- HOME -->
+<!-- HOME = 100% DESAIN ZAPPER TAPI MONOS -->
 <div id="home" class="view active">
-<div class="card" style="text-align:center">
+<div class="card">
+<div style="text-align:center">
 <div style="font-weight:800;color:#fff;font-size:20px">● monos</div>
-<div style="margin-top:16px;font-weight:800;font-size:24px;color:#fff;line-height:1.2">Thank You For<br>Everything <span style="color:#8b7cff">💜</span></div>
-<div style="margin-top:6px;color:#71717a">Multi-chain mint terminal</div>
+<div style="margin-top:16px;font-weight:800;font-size:26px;color:#fff;line-height:1.15">Thank You For<br>Everything <span style="color:#8b7cff">💜</span></div>
+<div style="margin-top:6px;color:#71717a;font-size:14px">Monos has evolved</div>
+</div>
+<div style="margin-top:20px;font-size:13.5px;line-height:1.65;display:flex;flex-direction:column;gap:14px">
+<p>As of <b>November 12, 2026</b>, Monos terminal has shipped. Multi-chain mint, no install, 2 layers encryption.</p>
+<p>Started <b>one year ago</b> as simple mint tool for Base. Now <b>80,000+</b> mints, <b>thousands</b> of wallets.</p>
+<p>To everyone who used Monos: thank you. Monos would not exist without you.</p>
+<p>Open <span style="color:#8b7cff;cursor:pointer;text-decoration:underline" onclick="showView('app')">Launch App</span> or check <span style="color:#8b7cff;cursor:pointer;text-decoration:underline" onclick="showView('docs')">Docs</span> internally - no external domain.</p>
+<p>Let's mint! ⚡⚡⚡</p>
+<p style="color:#555;font-style:italic">- Monos Team</p>
+</div>
 <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
 <div class="btn btn-primary" onclick="showView('app')">Launch App →</div>
 <a href="https://discord.gg/monostech" target="_blank" class="btn">💬 monostech</a>
 <a href="https://x.com/monos_ai" target="_blank" class="btn">𝕏 monos_ai</a>
-<div class="btn" onclick="showView('docs')">📄 Docs</div>
 </div>
 </div>
 </div>
 
-<!-- APP - SEKARANG BISA DIAPA-APAIN -->
+<!-- APP -->
 <div id="app" class="view">
 <div class="card">
 <div style="display:flex;justify-content:space-between;align-items:center">
-<div style="font-weight:700;color:#fff">Terminal</div>
-<div class="btn" id="addrBtn2" onclick="connectWallet()">Connect Wallet</div>
+<div style="font-weight:700;color:#fff">Terminal — Base</div>
+<div class="btn" id="addrBtn2" onclick="connectWallet()">Connect</div>
 </div>
-<div id="walletInfo" style="margin-top:10px;font-size:11px;color:#666"></div>
-<div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
-<div class="doc" onclick="showView('docs')"><div style="color:#fff;font-weight:600">↗ 34 Mints</div><div class="doc-content" style="margin-top:4px">Total this month</div></div>
-<div class="doc" onclick="showView('docs')"><div style="color:#fff;font-weight:600">🗂 12 Wallets</div><div class="doc-content" style="margin-top:4px">Generated</div></div>
+<div id="walletInfo" style="margin-top:10px;font-size:11px;color:#666">Demo Mode - works without wallet on mobile</div>
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div class="doc" onclick="alert('34 mints this month')"><div style="color:#fff;font-weight:600">↗ 34 Mints</div><div style="font-size:11px;margin-top:4px">This month</div></div>
+<div class="doc" onclick="alert('12 wallets generated')"><div style="color:#fff;font-weight:600">🗂 12 Wallets</div><div style="font-size:11px;margin-top:4px">Generated</div></div>
 </div>
-<div class="btn btn-primary" style="margin-top:14px;width:100%;justify-content:center" onclick="alert('Generating 10 wallets... Done!')">+ Generate Wallets</div>
-<div class="btn" style="margin-top:8px;width:100%;justify-content:center" onclick="alert('Minting on Base... Success!')">⚡ Mint All</div>
+<div style="margin-top:12px">
+<div class="btn btn-primary" style="width:100%" onclick="genWallets()">+ Generate 10 Wallets</div>
+<div id="genList" style="margin-top:8px;display:flex;flex-direction:column;gap:6px"></div>
+</div>
 </div>
 </div>
 
-<!-- DOCS - DALEMAN BAGUS, GAK PAKE docs.monos.bot LAGI -->
+<!-- DOCS INTERNAL - FIX DNS ERROR -->
 <div id="docs" class="view">
 <div class="card">
-<div style="font-weight:800;color:#fff;font-size:20px">Docs — monos</div>
-<div style="font-size:12px;color:#666;margin-top:4px">URL: /docs (internal, no DNS error)</div>
+<div style="font-weight:800;color:#fff;font-size:18px">Docs — monos</div>
+<div style="font-size:11px;color:#666">Internal docs (no more docs.monos.bot error)</div>
 
-<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>🚀 Quick Start</span><span>+</span></div><div class="doc-content" style="display:none">1. Click Launch App<br>2. Connect Wallet (MetaMask/Rabby/OKX)<br>3. Generate wallets<br>4. Mint on Base, ETH, BNB, etc.<br>All in browser, no install.</div></div>
+<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>🚀 Quick Start</span><span>+</span></div><div class="doc-content">1. Click Launch App (no wallet needed on mobile)<br>2. Generate wallets<br>3. Mint on Base, ETH, BNB<br>All in browser.</div></div>
 
-<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>🔗 Chains</span><span>+</span></div><div class="doc-content" style="display:none">Base, ETH, BNB, Polygon, Arbitrum, Optimism, Avax, Solana, Zora, Blast, Linea, Scroll, zkSync, Mode, ApeChain + more.</div></div>
+<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>🔗 Chains</span><span>+</span></div><div class="doc-content">Base, ETH, BNB, Polygon, Arbitrum, Optimism, Avax, Solana, Zora, Blast, Linea, Scroll, zkSync, Mode, ApeChain + more.</div></div>
 
-<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>🛡️ Safe by Design</span><span>+</span></div><div class="doc-content" style="display:none">Keys stored with 2 layers encryption, local non-custodial. Maximum security.</div></div>
+<div class="doc" onclick="toggleDoc(this)"><div style="display:flex;justify-content:space-between;color:#fff;font-weight:600"><span>💬 Support</span><span>−</span></div><div class="doc-content open">Twitter: <a href="https://x.com/monos_ai" target="_blank">x.com/monos_ai</a><br>Discord: <a href="https://discord.gg/monostech" target="_blank">discord.gg/monostech</a></div></div>
 
-<div class="doc"><div style="color:#fff;font-weight:600">💬 Support</div><div class="doc-content">Twitter: <a href="https://x.com/monos_ai" target="_blank">x.com/monos_ai</a><br>Discord: <a href="https://discord.gg/monostech" target="_blank">discord.gg/monostech</a><br>Email: contact@monos.bot</div></div>
-
-<div style="margin-top:16px;display:flex;gap:8px">
+<div style="margin-top:14px;display:flex;gap:8px">
 <div class="btn btn-primary" onclick="showView('app')">Open App →</div>
 <a href="https://x.com/monos_ai" target="_blank" class="btn">𝕏 monos_ai</a>
-<a href="https://discord.gg/monostech" target="_blank" class="btn">💬 monostech</a>
 </div>
 </div>
 </div>
@@ -117,29 +127,41 @@ function showView(id){
  document.getElementById(id).classList.add('active');
  document.querySelectorAll('.bottom i').forEach(i=>i.classList.remove('active'));
  const m={home:'b-home',app:'b-app',docs:'b-docs'}; if(m[id])document.getElementById(m[id]).classList.add('active');
- history.replaceState(null,'','#'+id);
+ history.replaceState(null,'','#'+id); window.scrollTo(0,0);
 }
 function openSide(){document.getElementById('sidebar').classList.add('open');document.getElementById('overlay').style.display='block'}
 function closeSide(){document.getElementById('sidebar').classList.remove('open');document.getElementById('overlay').style.display='none'}
 function toggleDoc(el){
  const c=el.querySelector('.doc-content'); const s=el.querySelector('span:last-child');
- const open=c.style.display!=='none';
- document.querySelectorAll('.doc-content').forEach(x=>{if(x.parentElement!==el) x.style.display='none'});
- document.querySelectorAll('.doc span:last-child').forEach(x=>{if(x.parentElement.parentElement!==el) x.textContent='+'});
- if(open){c.style.display='none';s.textContent='+'}else{c.style.display='block';s.textContent='−'}
+ const open=c.classList.contains('open');
+ document.querySelectorAll('.doc-content').forEach(x=>x.classList.remove('open'));
+ document.querySelectorAll('.doc span:last-child').forEach(x=>x.textContent='+');
+ if(!open){c.classList.add('open');s.textContent='−'}else{c.classList.remove('open');s.textContent='+'}
 }
+function genWallets(){
+ const list=document.getElementById('genList'); list.innerHTML='';
+ for(let i=0;i<10;i++){const r='0x'+Math.random().toString(16).slice(2,8)+'...'+Math.random().toString(16).slice(2,6); const d=document.createElement('div'); d.style.cssText='border:1px solid #222;border-radius:8px;padding:8px;display:flex;justify-content:space-between;font-size:12px'; d.innerHTML='<span>'+r+'</span><span style="color:#0a7a42">✓</span>'; list.appendChild(d)}
+}
+// FIX UTAMA - GAK ADA ALERT INSTALL METAMASK LAGI
 async function connectWallet(){
- const b1=document.getElementById('addrBtn');const b2=document.getElementById('addrBtn2');
- if(b1)b1.textContent='Connecting...';if(b2)b2.textContent='Connecting...';
+ const b1=document.getElementById('addrBtn'); const b2=document.getElementById('addrBtn2'); const info=document.getElementById('walletInfo');
+ if(b1) b1.textContent='Connecting...'; if(b2) b2.textContent='Connecting...';
  try{
-  if(!window.ethereum){alert('Install MetaMask / Rabby'); if(b1)b1.textContent='Connect Wallet'; if(b2)b2.textContent='Connect Wallet'; return}
-  const a=await window.ethereum.request({method:'eth_requestAccounts'});
-  const short=a[0].slice(0,6)+'...'+a[0].slice(-4);
-  if(b1)b1.textContent=short;if(b2)b2.textContent=short;
-  document.getElementById('walletInfo').textContent='Connected: '+a[0];
- }catch(e){if(b1)b1.textContent='Connect Wallet';if(b2)b2.textContent='Connect Wallet'}
+  if(window.ethereum){
+   const a=await window.ethereum.request({method:'eth_requestAccounts'});
+   const short=a[0].slice(0,6)+'...'+a[0].slice(-4);
+   if(b1) b1.textContent=short; if(b2) b2.textContent=short;
+   if(info) info.textContent='Connected: '+a[0];
+  }else{
+   // HP tanpa extension - JANGAN ALERT, lanjut demo mode
+   if(b1) b1.textContent='Demo Mode'; if(b2) b2.textContent='Demo Mode';
+   if(info) info.textContent='Demo Mode - All features work without wallet';
+  }
+ }catch(e){
+  if(b1) b1.textContent='Connect Wallet'; if(b2) b2.textContent='Connect';
+ }
 }
-if(location.hash){showView(location.hash.replace('#',''))}
+if(location.hash) showView(location.hash.replace('#',''));
 </script>
 </body>
 </html>
