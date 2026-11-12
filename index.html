@@ -8,7 +8,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
-.wrap{max-width:640px;margin:0 auto;padding:0 14px}
+.wrap{max-width:620px;margin:0 auto;padding:0 14px}
 .pill{border:1px solid #e5e5e3;border-radius:999px;padding:7px 14px;font-size:13px;background:#fff;cursor:pointer}
 .btn{background:#6b6cff;color:#fff;border-radius:999px;padding:8px 18px;font-size:13px;font-weight:600;border:none;cursor:pointer}
 .card{border:1px solid #ecebe8;border-radius:16px;background:#fff;margin-top:14px;overflow:hidden}
@@ -16,18 +16,23 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 .small{font-size:13px;color:#888;line-height:1.5}
 .view{display:none}.view.active{display:block}
 .q{padding:14px 0;border-bottom:1px solid #eee;font-size:13px;display:flex;justify-content:space-between;cursor:pointer}
-.a{padding:0 0 14px;font-size:12.5px;color:#555;line-height:1.6;display:none}
-.a.open{display:block}
+.a{padding:0 0 14px;font-size:12.5px;color:#555;display:none}.a.open{display:block}
 
-/* ANIMASI BERGERAK */
-.marquee{overflow:hidden;white-space:nowrap}
-.marquee-track{display:flex;gap:8px;animation:scroll 18s linear infinite;width:max-content}
+/* MULTICHAIN BERGERAK 100% KEK UMI.BOT */
+.mc-wrap{overflow:hidden;padding:14px 0}
+.mc-track{display:flex;gap:10px;width:max-content;animation:mcScroll 20s linear infinite}
+.mc-track.rev{animation-direction:reverse;animation-duration:24s}
+.mc-track.slow{animation-duration:28s}
+@keyframes mcScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.chain{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:1px solid #f0f0f0}
+
+/* YANG LAIN BERGERAK */
+.marquee{overflow:hidden}.marquee-track{display:flex;gap:8px;animation:scroll 18s linear infinite;width:max-content}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.chain{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.line-anim{height:2px;border-radius:2px;margin:6px 0;animation:lineMove 2s ease-in-out infinite}
-@keyframes lineMove{0%{width:40%}50%{width:85%}100%{width:40%}}
-.wallet-pop{animation:pop 0.6s ease forwards;opacity:0}
-@keyframes pop{0%{transform:translateY(10px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.line-anim{height:2px;border-radius:2px;margin:7px 0;animation:lineMove 2s ease-in-out infinite}
+@keyframes lineMove{0%{width:40%}50%{width:90%}100%{width:40%}}
+.wallet-pop{animation:pop 0.5s ease forwards;opacity:0}
+@keyframes pop{0%{transform:translateY(8px);opacity:0}100%{transform:translateY(0);opacity:1}}
 .keys{animation:float 2.5s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 #walletModal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:99;padding:14px}
@@ -37,7 +42,7 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 <body>
 
 <div class="wrap" style="text-align:center;padding:22px 14px 10px;position:sticky;top:0;background:#fcfcfa;z-index:10">
-<div style="font-weight:800;font-size:20px;letter-spacing:-0.5px">● monos</div>
+<div style="font-weight:800;font-size:20px">● monos</div>
 <div style="margin-top:14px;display:flex;gap:8px;justify-content:center">
 <span class="pill" onclick="showView('pricing')">Pricing</span>
 <span class="pill" onclick="showView('faq')">FAQ</span>
@@ -46,7 +51,6 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 <div id="addr" class="small" style="margin-top:8px;display:none"></div>
 </div>
 
-<!-- HOME BERGERAK PERSIS SCREENSHOT 1-3 -->
 <div id="home" class="view active">
 
 <div class="wrap" style="padding:8px 14px;display:flex;gap:8px;justify-content:center">
@@ -55,95 +59,61 @@ body{background:#fcfcfa;color:#222;font-family:Inter,sans-serif}
 <span class="badge" style="background:#fff;border:1px solid #e5e5e3">✉ Contact</span>
 </div>
 
-<!-- MULTI-CHAIN GRID BERGERAK DIKIT -->
-<div class="wrap"><div class="card" style="padding:14px">
-<div style="display:grid;grid-template-columns:repeat(8,1fr);gap:10px">
-<div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">◍</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#d0e8ff">P</div><div class="chain" style="background:#eee">⇄</div>
-<div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#f0d0ff">∞</div><div class="chain" style="background:#ffdddd">▲</div><div class="chain" style="background:#eee">⇄</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div>
-<div class="chain" style="background:#ffdddd">〰</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">•</div><div class="chain" style="background:#d0ffd0">◎</div><div class="chain" style="background:#ffe0ff">◍</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div><div class="chain" style="background:#6b9cff;color:#fff">—</div>
+<!-- MULTICHAIN BERGERAK 100% PERSIS GAMBAR LU -->
+<div class="wrap"><div class="card">
+<div class="mc-wrap">
+<div class="mc-track">
+<div style="display:flex;gap:10px">
+<div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">◍</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#d0e8ff">P</div><div class="chain" style="background:#eee">⇄</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#f0d0ff">∞</div><div class="chain" style="background:#ffdddd">▲</div><div class="chain" style="background:#eee">⇄</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div>
 </div>
-<div style="padding:18px 8px 6px"><div style="font-weight:700">Multi-chain</div><div class="small" style="margin-top:4px">Built to support all your favourite blockchains</div></div>
-</div></div>
-
-<!-- NOTHING TO INSTALL -->
-<div class="wrap"><div class="card">
-<div style="padding:14px;display:flex;gap:10px;justify-content:center;font-size:18px"><span>🌐</span><span>🧭</span><span>🦊</span><span>🛡</span></div>
-<div style="border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px"><div style="display:flex;gap:6px"><span style="width:10px;height:10px;background:#ff5f57;border-radius:50%"></span><span style="width:10px;height:10px;background:#ffbd2e;border-radius:50%"></span><span style="width:10px;height:10px;background:#28c940;border-radius:50%"></span></div><div style="margin-top:10px;border:1px solid #eee;border-radius:8px;padding:6px 10px;display:flex;gap:8px;font-size:12px;background:#fafafa">‹ › ↻ <span style="background:#fff;border:1px solid #eee;border-radius:12px;padding:2px 10px">https://monos.bot</span></div></div>
-<div style="padding:18px"><div style="font-weight:700">Nothing to install</div><div class="small" style="margin-top:4px">Everything works in the browser, no installation required</div></div>
-</div></div>
-
-<!-- LAUNCHPAD SUPPORT -->
-<div class="wrap"><div class="card">
-<div style="padding:14px;display:flex;gap:12px;font-size:20px">◼ 🟨 🔵 ◼ 🏚 ◥</div>
-<div style="border:1px solid #eee;border-radius:8px;margin:0 14px;padding:8px 10px;font-size:11px;color:#888">🔍 https://opensea.io/collection/tantocollective</div>
-<div style="padding:18px"><div style="font-weight:700">Launchpad Support</div><div class="small" style="margin-top:4px">Supports all major launchpads out of the box</div></div>
-</div></div>
-
-<!-- PROVEN TECH - BERGERAK MARQUEE KEK VIDEO -->
-<div class="wrap"><div class="card">
-<div style="padding:10px 0">
-<div class="marquee"><div class="marquee-track">
-<div style="display:flex;gap:6px"><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div></div>
-<div style="display:flex;gap:6px;margin-left:6px"><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div><div style="width:36px;height:36px;background:#ddd;border-radius:4px"></div><div style="width:36px;height:36px;background:#ccc;border-radius:4px"></div></div>
-</div></div>
-<div class="marquee" style="margin-top:6px"><div class="marquee-track" style="animation-direction:reverse;animation-duration:22s">
-<div style="display:flex;gap:6px"><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div></div>
-<div style="display:flex;gap:6px;margin-left:6px"><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div><div style="width:36px;height:36px;background:#bbb;border-radius:4px"></div><div style="width:36px;height:36px;background:#aaa;border-radius:4px"></div></div>
-</div></div>
-</div>
-<div style="padding:18px"><div style="font-weight:700">Proven Tech</div><div class="small" style="margin-top:4px">More than 80,000 tokens minted so far</div></div>
-</div></div>
-
-<!-- SAFE BY DESIGN - KUNCI BERGERAK -->
-<div class="wrap"><div class="card" style="text-align:center">
-<div style="padding:18px"><div style="border:1px dashed #ccc;border-radius:12px;padding:16px;position:relative;display:inline-block"><div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#fff;padding:2px 6px;border:1px solid #ddd;border-radius:6px">🛡</div><div style="display:flex;gap:8px" class="keys"><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span></div></div></div>
-<div style="padding:0 18px 18px;text-align:left"><div style="font-weight:700">Safe by Design</div><div class="small" style="margin-top:4px">Keys are stored with 2 layers of encryption for maximum security</div></div>
-</div></div>
-
-<!-- SUPER FAST - GARIS BERGERAK -->
-<div class="wrap"><div class="card">
-<div style="padding:12px">
-<div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d)"></div>
-<div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.2s"></div>
-<div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.4s"></div>
-<div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.6s"></div>
-<div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.8s"></div>
-</div>
-<div style="padding:18px"><div style="font-weight:700">Super Fast</div><div class="small" style="margin-top:4px">Fast minting speed anywhere in the world, no custom RPC required</div></div>
-</div></div>
-
-<!-- FULL OF TOOLS - WALLET MUNCUL BERGERAK -->
-<div class="wrap"><div class="card">
-<div style="padding:14px">
-<div style="text-align:center;color:#0a7a42;font-weight:700;font-size:12px">✓ 12 wallets generated!</div>
-<div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0s">0x42A...CF8F18</div>
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.1s">0x404e...AEAaa</div>
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.2s">0xb038...A464d8</div>
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.3s">0x83C3...F1AC7</div>
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.4s">0xE6c1...74016F</div>
-<div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.5s">0xCF5...8c90EF</div>
+<div style="display:flex;gap:10px;margin-left:10px">
+<div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">◍</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#d0e8ff">P</div><div class="chain" style="background:#eee">⇄</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#f0d0ff">∞</div><div class="chain" style="background:#ffdddd">▲</div><div class="chain" style="background:#eee">⇄</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div>
 </div>
 </div>
-<div style="padding:18px"><div style="font-weight:700">Full of tools</div><div class="small" style="margin-top:4px">Generate wallets, transfer funds & NFTs all in one place</div></div>
+<div class="mc-track rev" style="margin-top:10px">
+<div style="display:flex;gap:10px">
+<div class="chain" style="background:#ffdddd">〰</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div><div class="chain" style="background:#d0ffd0">◎</div><div class="chain" style="background:#ffe0ff">◍</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div><div class="chain" style="background:#6b9cff;color:#fff">—</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">◍</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#d0e8ff">P</div><div class="chain" style="background:#eee">⇄</div>
+</div>
+<div style="display:flex;gap:10px;margin-left:10px">
+<div class="chain" style="background:#ffdddd">〰</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div><div class="chain" style="background:#d0ffd0">◎</div><div class="chain" style="background:#ffe0ff">◍</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div><div class="chain" style="background:#6b9cff;color:#fff">—</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">◍</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#d0e8ff">P</div><div class="chain" style="background:#eee">⇄</div>
+</div>
+</div>
+<div class="mc-track slow" style="margin-top:10px">
+<div style="display:flex;gap:10px">
+<div class="chain" style="background:#ffe0e0">R</div><div class="chain" style="background:#e0d0ff">◍</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div><div class="chain" style="background:#d0ffd0">◎</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div><div class="chain" style="background:#6b9cff;color:#fff">—</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#ffdddd">〰</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div>
+</div>
+<div style="display:flex;gap:10px;margin-left:10px">
+<div class="chain" style="background:#ffe0e0">R</div><div class="chain" style="background:#e0d0ff">◍</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div><div class="chain" style="background:#d0ffd0">◎</div><div class="chain" style="background:#e6f0ff">♦</div><div class="chain" style="background:#6b6cff;color:#fff">APE</div><div class="chain" style="background:#6b9cff;color:#fff">—</div><div class="chain" style="background:#fef3b5">B</div><div class="chain" style="background:#d6ffd6">↗</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8e0ff">◇</div><div class="chain" style="background:#ffdddd">〰</div><div class="chain" style="background:#e0e0ff">Ξ</div><div class="chain" style="background:#111;color:#fff">●</div><div class="chain" style="background:#e8d5b5">◍</div>
+</div>
+</div>
+</div>
+<div style="padding:6px 18px 18px"><div style="font-weight:700">Multi-chain</div><div class="small" style="margin-top:4px">Built to support all your favourite blockchains</div></div>
 </div></div>
 
-<!-- DARK MODE -->
-<div class="wrap"><div class="card">
-<div style="padding:18px;display:flex;justify-content:center"><div style="background:#111;color:#fff;border-radius:12px;padding:12px;width:140px;transform:rotate(-3deg)"><div style="font-size:11px">↗ Mints 3<br>🗂 Wallets 34<br>⇄ Transfer<br>◍ Portfolio</div></div></div>
-<div style="padding:18px"><div style="font-weight:700">Dark mode</div><div class="small" style="margin-top:4px">Want to mint at night? We got you covered</div></div>
-</div></div>
+<!-- SISA NYA BERGERAK JUGA PERSIS GAMBAR LU -->
+<div class="wrap"><div class="card"><div style="padding:14px;display:flex;gap:10px;justify-content:center;font-size:20px"><span>🌐</span><span>🧭</span><span>🦊</span><span>🛡</span></div><div style="border-top:1px solid #eee;border-bottom:1px solid #eee;padding:10px"><div style="display:flex;gap:6px"><span style="width:10px;height:10px;background:#ff5f57;border-radius:50%"></span><span style="width:10px;height:10px;background:#ffbd2e;border-radius:50%"></span><span style="width:10px;height:10px;background:#28c940;border-radius:50%"></span></div><div style="margin-top:10px;border:1px solid #eee;border-radius:8px;padding:6px 10px;display:flex;gap:8px;font-size:12px;background:#fafafa">‹ › ↻ <span style="background:#fff;border:1px solid #eee;border-radius:12px;padding:2px 10px">https://umi.bot</span></div></div><div style="padding:18px"><div style="font-weight:700">Nothing to install</div><div class="small" style="margin-top:4px">Everything works in the browser, no installation required</div></div></div></div>
+
+<div class="wrap"><div class="card"><div style="padding:14px;display:flex;gap:12px;font-size:20px">◼ 🟨 🔵 ◼ 🏚 ◥</div><div style="border:1px solid #eee;border-radius:8px;margin:0 14px;padding:8px 10px;font-size:11px;color:#888">🔍 https://opensea.io/collection/tantocollective</div><div style="padding:18px"><div style="font-weight:700">Launchpad Support</div><div class="small" style="margin-top:4px">Supports all major launchpads out of the box</div></div></div></div>
+
+<div class="wrap"><div class="card"><div style="padding:10px 0"><div class="marquee"><div class="marquee-track"><div style="display:flex;gap:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0"></div>`)</script></div><div style="display:flex;gap:6px;margin-left:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#ddd;border-radius:4px;flex-shrink:0"></div>`)</script></div></div></div><div class="marquee" style="margin-top:6px"><div class="marquee-track" style="animation-direction:reverse;animation-duration:22s"><div style="display:flex;gap:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#bbb;border-radius:4px;flex-shrink:0"></div>`)</script></div><div style="display:flex;gap:6px;margin-left:6px"><script>for(let i=0;i<20;i++)document.write(`<div style="width:36px;height:36px;background:#bbb;border-radius:4px;flex-shrink:0"></div>`)</script></div></div></div></div><div style="padding:18px"><div style="font-weight:700">Proven Tech</div><div class="small">More than 80,000 tokens minted so far</div></div></div></div>
+
+<div class="wrap"><div class="card" style="text-align:center"><div style="padding:18px"><div style="border:1px dashed #ccc;border-radius:12px;padding:16px;display:inline-block"><div class="keys" style="display:flex;gap:8px"><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span><span style="border:1px solid #ddd;border-radius:6px;padding:6px">🔑</span></div></div></div><div style="padding:0 18px 18px;text-align:left"><div style="font-weight:700">Safe by Design</div><div class="small">Keys are stored with 2 layers of encryption for maximum security</div></div></div></div>
+
+<div class="wrap"><div class="card"><div style="padding:12px"><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d)"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.2s"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.4s"></div><div class="line-anim" style="background:linear-gradient(90deg,#6b6cff,#ffb84d);animation-delay:0.6s"></div></div><div style="padding:18px"><div style="font-weight:700">Super Fast</div><div class="small">Fast minting speed anywhere in the world, no custom RPC required</div></div></div></div>
+
+<div class="wrap"><div class="card"><div style="padding:14px"><div style="text-align:center;color:#0a7a42;font-weight:700;font-size:12px">✓ 12 wallets generated!</div><div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px"><div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px">0x42A...CF8F18</div><div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.1s">0x404e...AEAaa</div><div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.2s">0xb038...A464d8</div><div class="wallet-pop" style="border:1px solid #eee;border-radius:8px;padding:6px;font-size:10px;animation-delay:0.3s">0x83C3...F1AC7</div></div></div><div style="padding:18px"><div style="font-weight:700">Full of tools</div><div class="small">Generate wallets, transfer funds & NFTs all in one place</div></div></div></div>
+
+<div class="wrap"><div class="card"><div style="padding:18px;display:flex;justify-content:center"><div style="background:#111;color:#fff;border-radius:12px;padding:12px;width:140px;transform:rotate(-3deg)"><div style="font-size:11px">↗ Mints 3<br>🗂 Wallets 34<br>⇄ Transfer<br>◍ Portfolio</div></div></div><div style="padding:18px"><div style="font-weight:700">Dark mode</div><div class="small">Want to mint at night? We got you covered</div></div></div></div>
 
 </div>
 
-<!-- PRICING & FAQ SAMA KEK KEMAREN + FUNGSI -->
-<div id="pricing" class="view"><div class="wrap" style="padding-top:6px"><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">On-demand</div><div class="small">For occasional minting</div><div style="margin-top:10px"><span style="font-size:32px;font-weight:700">$2</span><span class="small">/mint</span></div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div><div style="margin-top:16px;font-size:13px">✓ Web-based • ✓ RPC & proxy • ✓ Bulk whitelist</div></div><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">Pro</div><div class="small">For heavy usage</div><div style="margin-top:10px"><span style="font-size:32px;font-weight:700">$200</span><span class="small">/month</span></div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div></div></div></div>
+<div id="pricing" class="view"><div class="wrap" style="padding-top:6px"><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">On-demand</div><div class="small">For occasional minting</div><div style="margin-top:10px"><span style="font-size:32px;font-weight:700">$2</span><span class="small">/mint</span></div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div></div><div class="card" style="padding:22px"><div style="font-weight:700;font-size:18px">Pro</div><div class="small">For heavy usage</div><div style="margin-top:10px"><span style="font-size:32px;font-weight:700">$200</span><span class="small">/month</span></div><div style="margin-top:12px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div></div></div></div>
 
-<div id="faq" class="view"><div class="wrap" style="padding-top:10px"><div style="text-align:center"><div style="font-size:22px;font-weight:700">FAQ</div><div class="small">Frequently asked questions</div></div><div style="margin-top:16px"><div class="q" onclick="toggleFaq(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is mint terminal for Base - generate wallets, bulk check, mint fast. No install.</div><div class="q" onclick="toggleFaq(this)"><span>Is it safe?</span><span>+</span></div><div class="a">Yes - 2 layer encryption, local keys, non-custodial.</div><div class="q" onclick="toggleFaq(this)"><span>How fast?</span><span>+</span></div><div class="a">Built-in RPC, no custom RPC needed.</div></div></div></div>
+<div id="faq" class="view"><div class="wrap" style="padding-top:10px"><div style="text-align:center"><div style="font-size:22px;font-weight:700">FAQ</div><div class="small">Frequently asked questions</div></div><div style="margin-top:16px"><div class="q" onclick="toggleFaq(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is mint terminal for Base - generate wallets, bulk check, mint fast. No install.</div><div class="q" onclick="toggleFaq(this)"><span>Is it safe?</span><span>+</span></div><div class="a">Yes - 2 layer encryption, local keys, non-custodial.</div></div></div></div>
 
 <div class="wrap" style="padding:24px 14px;text-align:center"><div style="font-size:11px;color:#aaa">© 2026 MONOS</div></div>
 
-<div id="walletModal" onclick="if(event.target==this)closeWallet()"><div style="background:#fff;border-radius:18px;padding:18px;width:100%;max-width:380px"><div style="display:flex;justify-content:space-between;font-weight:700"><span>Connect wallet</span><span style="cursor:pointer" onclick="closeWallet()">×</span></div><div class="wallet-opt" onclick="realConnect()">🦊 MetaMask / Rabby / OKX ›</div><div class="wallet-opt" onclick="realConnect()">Phantom ›</div><div class="wallet-opt" onclick="realConnect()">Coinbase ›</div><div id="walletStatus" class="small" style="margin-top:12px;text-align:center"></div></div></div>
+<div id="walletModal" onclick="if(event.target==this)closeWallet()"><div style="background:#fff;border-radius:18px;padding:18px;width:100%;max-width:380px"><div style="display:flex;justify-content:space-between;font-weight:700"><span>Connect wallet</span><span style="cursor:pointer" onclick="closeWallet()">×</span></div><div class="wallet-opt" onclick="realConnect()">🦊 MetaMask / Rabby / OKX ›</div><div class="wallet-opt" onclick="realConnect()">Phantom ›</div><div id="walletStatus" class="small" style="margin-top:12px;text-align:center"></div></div></div>
 
 <script>
 function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
