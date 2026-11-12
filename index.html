@@ -3,139 +3,152 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MONOS — monostech.xyz</title>
+<title>MONOS</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fcfcfa;color:#111;font-family:Inter,sans-serif}
-.wrap{max-width:640px;margin:0 auto;padding:0 14px}
+.wrap{max-width:620px;margin:0 auto;padding:0 14px}
 .pill{border:1px solid #e7e7e5;border-radius:999px;padding:7px 14px;font-size:12px;background:#fff;cursor:pointer}
-.btn{background:#6b6cff;color:#fff;border-radius:999px;padding:8px 16px;font-size:12px;font-weight:500;border:none;cursor:pointer}
-.card{border:1px solid #ecebe8;border-radius:16px;background:#fff;padding:18px;margin-top:14px}
-.badge{border-radius:6px;padding:5px 10px;font-size:11px;font-weight:700;color:#fff;display:inline-flex;gap:6px}
+.pill.active{background:#111;color:#fff;border-color:#111}
+.btn{background:#6b6cff;color:#fff;border-radius:999px;padding:8px 16px;font-size:12px;font-weight:600;border:none;cursor:pointer}
+.card{border:1px solid #ecebe8;border-radius:16px;background:#fff;padding:20px;margin-top:14px}
 .small{font-size:12px;color:#888;line-height:1.5}
-.q{padding:14px 0;border-bottom:1px solid #eee;font-size:13px;display:flex;justify-content:space-between;cursor:pointer}
-.a{padding:10px 0 16px;font-size:12px;color:#555;line-height:1.6;display:none}
+.q{padding:14px 0;border-bottom:1px solid #eee;font-size:13px;display:flex;justify-content:space-between;cursor:pointer;user-select:none}
+.a{padding:0 0 16px;font-size:12.5px;color:#555;line-height:1.65;display:none;max-width:520px}
 .a.open{display:block}
 .view{display:none}.view.active{display:block}
-.wallet-opt{border:1px solid #eee;border-radius:10px;padding:12px;display:flex;justify-content:space-between;font-size:13px;cursor:pointer;margin-top:8px}
+.wallet-opt{border:1px solid #eee;border-radius:12px;padding:13px;display:flex;justify-content:space-between;align-items:center;font-size:13px;cursor:pointer;margin-top:10px;background:#fff}
 .wallet-opt:hover{border-color:#111}
-#walletModal{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:none;align-items:center;justify-content:center;z-index:99}
+#walletModal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:99;padding:14px}
 </style>
 </head>
 <body>
 
-<div class="wrap" style="text-align:center;padding:24px 14px 10px;position:sticky;top:0;background:#fcfcfa;z-index:10">
-<div style="display:flex;justify-content:center;align-items:center;gap:6px;font-weight:800;cursor:pointer" onclick="showView('home')"><div style="width:22px;height:22px;border:2.5px solid #111;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px">M</div> monos</div>
+<div class="wrap" style="text-align:center;padding:22px 14px 12px;position:sticky;top:0;background:#fcfcfa;z-index:10">
+<div style="font-weight:800;font-size:18px;cursor:pointer;letter-spacing:-0.5px" onclick="showView('home')">MONOS</div>
 <div style="margin-top:14px;display:flex;gap:8px;justify-content:center">
-<span class="pill" onclick="showView('pricing')">Pricing</span>
-<span class="pill" onclick="showView('faq')">FAQ</span>
-<span class="btn" onclick="openWallet()">Launch App →</span>
+<span id="pPricing" class="pill" onclick="showView('pricing')">Pricing</span>
+<span id="pFaq" class="pill" onclick="showView('faq')">FAQ</span>
+<span class="btn" onclick="openWallet()">Launch App</span>
 </div>
+<div id="connectedAddr" class="small" style="margin-top:8px;display:none"></div>
 </div>
 
-<!-- HOME VIEW -->
+<!-- HOME -->
 <div id="home" class="view active">
-<div class="wrap" style="padding:8px 14px;display:flex;gap:8px;justify-content:center">
-<a href="https://discord.com" target="_blank" class="badge" style="background:#5865F2;text-decoration:none">Discord  2070</a>
-<a href="https://twitter.com" target="_blank" class="badge" style="background:#1DA1F2;text-decoration:none">Twitter</a>
-<span class="badge" style="background:#fff;color:#111;border:1px solid #e7e7e5;cursor:pointer" onclick="openWallet()">✉ Contact</span>
-</div>
-<div class="wrap"><div class="card" style="padding:10px"><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:7px"><script>for(let i=0;i<40;i++)document.write(`<div style="aspect-ratio:1;border-radius:50%;background:#${['eee','ddd','f0f0ff','ffe8e8'][i%4]}"></div>`)</script></div></div></div>
+<div class="wrap"><div class="card" style="padding:10px"><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:7px"><script>for(let i=0;i<40;i++)document.write(`<div style="aspect-ratio:1;border-radius:50%;background:#${['eee','ddd','eef','fee'][i%4]}"></div>`)</script></div></div></div>
 <div class="wrap">
-<div class="card" style="text-align:center"><div style="font-weight:700">Single-chain Base</div><div class="small">Built for Base 8453 only, by monostech.xyz</div></div>
-<div class="card" style="text-align:center"><div style="font-weight:700">Nothing to install</div><div class="small">Everything works in the browser, no installation required</div></div>
-<div class="card"><div style="font-weight:700">Safe by Design</div><div class="small">Keys stored with 2 layers of encryption</div></div>
-<div class="card"><div style="font-weight:700">Full of tools</div><div class="small">Trade, transfer & track Base in one place</div></div>
+<div class="card" style="text-align:center"><div style="font-weight:700">Built for Base</div><div class="small">One screen. No extension.</div></div>
+<div class="card"><div style="font-weight:700">Safe by Design</div><div class="small">Keys encrypted, non-custodial. You keep control.</div></div>
+<div class="card"><div style="font-weight:700">Full of tools</div><div class="small">Trade, disperse, bulk check — all in browser.</div></div>
 </div>
 </div>
 
-<!-- PRICING VIEW - PERSIS GAMBAR LU -->
+<!-- PRICING - PERSIS SCREENSHOT LU -->
 <div id="pricing" class="view">
-<div class="wrap" style="padding-top:10px">
+<div class="wrap" style="padding-top:6px">
 <div class="card" style="padding:22px">
-<div style="font-weight:700;font-size:18px">On-demand</div>
-<div class="small">For occasional trading</div>
-<div style="margin-top:12px"><span style="font-size:32px;font-weight:700">$2</span><span class="small">/trade</span></div>
+<div style="font-weight:700;font-size:18px">On-demand</div><div class="small">For occasional minting</div>
+<div style="margin-top:12px"><span style="font-size:34px;font-weight:700">$2</span><span class="small">/mint</span></div>
 <div style="margin-top:16px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div>
 <div style="margin-top:20px;font-weight:700;font-size:13px">Included</div>
-<div style="margin-top:10px;display:flex;flex-direction:column;gap:10px;font-size:13px">
-<div style="color:#aaa">⊘ Unlimited trading</div>
-<div style="color:#aaa">⊘ Pausable subscription</div>
-<div style="color:#aaa">⊘ Giveaways</div>
-<div>🔵 Web-based trading</div>
-<div>🔵 Built-in RPC and proxy</div>
-<div>🔵 Bulk whitelist checking ?</div>
-<div>🔵 Bulk disperse ?</div>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:11px;font-size:13px">
+<div style="display:flex;gap:8px;color:#aaa"><span>✕</span> Unlimited minting</div>
+<div style="display:flex;gap:8px;color:#aaa"><span>✕</span> Pausable subscription</div>
+<div style="display:flex;gap:8px;color:#aaa"><span>✕</span> Giveaways</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Web-based minting</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Built-in RPC and proxy</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Bulk whitelist checking</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Bulk disperse</div>
 </div>
 </div>
 
 <div class="card" style="padding:22px">
-<div style="font-weight:700;font-size:18px">Pro</div>
-<div class="small">For heavy usage</div>
-<div style="margin-top:12px"><span style="font-size:32px;font-weight:700">$200</span><span class="small">/month</span></div>
+<div style="font-weight:700;font-size:18px">Pro</div><div class="small">For heavy usage</div>
+<div style="margin-top:12px"><span style="font-size:34px;font-weight:700">$200</span><span class="small">/month</span></div>
 <div style="margin-top:16px;background:#6b6cff;color:#fff;text-align:center;padding:12px;border-radius:10px;font-weight:600;cursor:pointer" onclick="openWallet()">Get started</div>
 <div style="margin-top:20px;font-weight:700;font-size:13px">Included</div>
-<div style="margin-top:10px;display:flex;flex-direction:column;gap:10px;font-size:13px">
-<div>🔵 Unlimited trading</div>
-<div>🔵 Pausable subscription ?</div>
-<div>🔵 Giveaways</div>
-<div>🔵 Web-based trading</div>
-<div>🔵 Built-in RPC and proxy</div>
+<div style="margin-top:12px;display:flex;flex-direction:column;gap:11px;font-size:13px">
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Unlimited minting</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Pausable subscription</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Giveaways</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Web-based minting</div>
+<div style="display:flex;gap:8px"><span style="color:#6b6cff">✓</span> Built-in RPC and proxy</div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- FAQ VIEW - SEMUA + BISA DI KLIK -->
+<!-- FAQ - APA ITU MONOS KLIK + -->
 <div id="faq" class="view">
 <div class="wrap" style="padding-top:10px">
 <div style="text-align:center"><div style="font-size:22px;font-weight:700">FAQ</div><div class="small">Frequently asked questions</div></div>
-
-<div style="margin-top:20px">
-<div style="font-weight:700;font-size:13px;margin:14px 0 8px">General</div>
+<div style="margin-top:18px">
+<div style="font-weight:700;font-size:12px;letter-spacing:0.5px;color:#111;margin:16px 0 8px">GENERAL</div>
 <div style="border-top:1px solid #eee">
-<div class="q" onclick="toggle(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is a terminal for Base chain 8453. One screen to trade Base tokens, built by MONOSTECH lab in Jakarta. No multi-chain noise, just Base. Inspired by your M logo — rounded square, thick stroke, mono weight.</div>
-<div class="q" onclick="toggle(this)"><span>How long has Monos been around?</span><span>+</span></div><div class="a">Monos started in 2025 as internal tool for Monostech. Public launch 2026 on Base. Built for traders who hate 10 tabs.</div>
-<div class="q" onclick="toggle(this)"><span>Is Monos hard to use for beginners?</span><span>+</span></div><div class="a">No. Connect wallet, pick token, buy/sell one click. Everything in browser, no install. Same UX as umi.bot but for trading not minting.</div>
-<div class="q" onclick="toggle(this)"><span>I heard Monos was unsafe</span><span>+</span></div><div class="a">Safe by design. Keys stored with 2 layers encryption, private RPC, no MEV. We never store seed. Audit pending.</div>
+<div class="q" onclick="toggleFaq(this)"><span>What is Monos?</span><span>+</span></div><div class="a">Monos is a mint terminal for Base. You can generate wallets, bulk check whitelist, and mint faster than manual. No install, works in browser. Same flow as umi.bot but optimized for Base 8453.</div>
+<div class="q" onclick="toggleFaq(this)"><span>How long has Monos been around?</span><span>+</span></div><div class="a">Built in 2025, public since 2026. Over 80k mints handled via internal tools before launch.</div>
+<div class="q" onclick="toggleFaq(this)"><span>Is Monos hard to use for beginners?</span><span>+</span></div><div class="a">No. Click Launch App, connect wallet, generate wallets, and mint. No code.</div>
 </div>
-<div style="font-weight:700;font-size:13px;margin:18px 0 8px">Usage & Features</div>
+<div style="font-weight:700;font-size:12px;letter-spacing:0.5px;margin:20px 0 8px">USAGE & FEATURES</div>
 <div style="border-top:1px solid #eee">
-<div class="q" onclick="toggle(this)"><span>Is it safe to use Monos?</span><span>+</span></div><div class="a">Yes. 2-layer encryption, non-custodial, you keep keys. Same model as umi.bot security.</div>
-<div class="q" onclick="toggle(this)"><span>Can Monos detect which of my wallets are whitelisted?</span><span>+</span></div><div class="a">Yes. Bulk whitelist checking built-in. Connect multiple wallets, we check all at once.</div>
-<div class="q" onclick="toggle(this)"><span>How fast is Monos? What is the hit rate?</span><span>+</span></div><div class="a">Sub-100ms with built-in RPC + proxy. No custom RPC needed. Hit rate depends on network, but we batch.</div>
-<div class="q" onclick="toggle(this)"><span>Do failed trades still cost gas?</span><span>+</span></div><div class="a">Yes, like any Base tx, failed tx still costs gas. But we simulate first to reduce fail.</div>
-<div class="q" onclick="toggle(this)"><span>Do you offer refunds?</span><span>+</span></div><div class="a">On-demand $2/trade non-refundable. Pro $200/month pausable anytime, see pricing page.</div>
+<div class="q" onclick="toggleFaq(this)"><span>Is it safe to use Monos?</span><span>+</span></div><div class="a">Yes. 2-layer encryption, keys stored locally, never sent to server. Non-custodial.</div>
+<div class="q" onclick="toggleFaq(this)"><span>Can Monos detect whitelisted wallets?</span><span>+</span></div><div class="a">Yes. Bulk whitelist checking included in both On-demand and Pro.</div>
+<div class="q" onclick="toggleFaq(this)"><span>How fast is Monos?</span><span>+</span></div><div class="a">Built-in RPC + proxy, no custom RPC needed. Fast mint anywhere.</div>
+<div class="q" onclick="toggleFaq(this)"><span>Do failed mints cost gas?</span><span>+</span></div><div class="a">Failed tx still costs gas on Base. We simulate to reduce fails.</div>
 </div>
 </div>
 </div>
 </div>
 
-<div class="wrap" style="padding:30px 14px;text-align:center" class="small"><div style="font-size:11px;color:#aaa">© 2026 Monos. All rights reserved — monostech.xyz</div></div>
+<div class="wrap" style="padding:28px 14px;text-align:center"><div style="font-size:11px;color:#aaa">© 2026 MONOS</div></div>
 
-<!-- WALLET MODAL AKTIF SEMUA -->
+<!-- WALLET MODAL - BENERAN KONEK -->
 <div id="walletModal" onclick="if(event.target==this)closeWallet()">
-<div style="background:#fff;border-radius:16px;padding:16px;width:92%;max-width:380px">
-<div style="display:flex;justify-content:space-between;font-weight:700"><span>Sign-in</span><span style="cursor:pointer" onclick="closeWallet()">×</span></div>
-<div style="margin-top:4px" class="small">Connect only. This wallet will not send funds automatically.</div>
-<div class="wallet-opt" onclick="connect('MetaMask')"><span>🦊 MetaMask</span><span>›</span></div>
-<div class="wallet-opt" onclick="connect('Rabby')"><span>Rabby</span><span>›</span></div>
-<div class="wallet-opt" onclick="connect('OKX Wallet')"><span>OKX Wallet</span><span>›</span></div>
-<div class="wallet-opt" onclick="connect('Phantom')"><span>Phantom</span><span>›</span></div>
-<div class="wallet-opt" onclick="connect('Coinbase Wallet')"><span>Coinbase Wallet</span><span>›</span></div>
-<div class="wallet-opt" onclick="connect('Trust Wallet')"><span>Trust Wallet</span><span>›</span></div>
-<div id="walletStatus" class="small" style="margin-top:12px;text-align:center"></div>
+<div style="background:#fff;border-radius:18px;padding:18px;width:100%;max-width:400px;max-height:90vh;overflow:auto">
+<div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>Connect wallet</span><span style="cursor:pointer" onclick="closeWallet()">×</span></div>
+<div class="small" style="margin-top:6px">This will connect to your browser wallet. No funds moved.</div>
+<div class="wallet-opt" onclick="realConnect()"><span>🦊 MetaMask / Rabby / OKX</span><span>›</span></div>
+<div class="wallet-opt" onclick="realConnect()"><span>◎ Phantom</span><span>›</span></div>
+<div class="wallet-opt" onclick="realConnect()"><span>Coinbase Wallet</span><span>›</span></div>
+<div class="wallet-opt" onclick="realConnect()"><span>Trust Wallet</span><span>›</span></div>
+<div id="walletStatus" class="small" style="margin-top:14px;text-align:center;word-break:break-all"></div>
 </div>
 </div>
 
 <script>
-function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
-function toggle(el){const a=el.nextElementSibling;const plus=el.querySelector('span:last-child');const open=a.classList.contains('open');document.querySelectorAll('.a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.q span:last-child').forEach(x=>x.textContent='+');if(!open){a.classList.add('open');plus.textContent='−'}}
+function showView(id){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('pPricing').classList.toggle('active',id==='pricing');
+  document.getElementById('pFaq').classList.toggle('active',id==='faq');
+  window.scrollTo(0,0);
+}
+function toggleFaq(el){
+  const a=el.nextElementSibling;
+  const icon=el.querySelector('span:last-child');
+  const isOpen=a.classList.contains('open');
+  document.querySelectorAll('.a').forEach(x=>x.classList.remove('open'));
+  document.querySelectorAll('.q span:last-child').forEach(x=>x.textContent='+');
+  if(!isOpen){a.classList.add('open');icon.textContent='−'}
+}
 function openWallet(){document.getElementById('walletModal').style.display='flex'}
 function closeWallet(){document.getElementById('walletModal').style.display='none'}
-function connect(name){document.getElementById('walletStatus').textContent='Connecting '+name+'...';setTimeout(()=>{document.getElementById('walletStatus').textContent='✓ Connected with '+name+' (demo)';setTimeout(closeWallet,800)},800)}
-</script>
 
+async function realConnect(){
+  const status=document.getElementById('walletStatus');
+  status.textContent='Connecting...';
+  try{
+    if(!window.ethereum){status.textContent='No wallet found. Install MetaMask / Rabby / OKX.';return;}
+    const accounts=await window.ethereum.request({method:'eth_requestAccounts'});
+    const addr=accounts[0];
+    status.textContent='Connected: '+addr;
+    document.getElementById('connectedAddr').style.display='block';
+    document.getElementById('connectedAddr').textContent='Connected: '+addr.slice(0,6)+'...'+addr.slice(-4);
+    setTimeout(closeWallet,1200);
+  }catch(e){status.textContent='Rejected or failed: '+(e.message||e)}
+}
+</script>
 </body>
 </html>
